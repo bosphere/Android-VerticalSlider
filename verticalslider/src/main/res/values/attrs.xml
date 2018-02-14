@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="VerticalSlider">
+        <attr name="vs_thumb_color" format="color|reference"/>
+        <attr name="vs_track_fg_color" format="color|reference"/>
+        <attr name="vs_track_bg_color" format="color|reference"/>
+        <attr name="vs_thumb_radius" format="dimension|reference"/>
+        <attr name="vs_track_fg_thickness" format="dimension|reference"/>
+        <attr name="vs_track_bg_thickness" format="dimension|reference"/>
+    </declare-styleable>
+</resources>

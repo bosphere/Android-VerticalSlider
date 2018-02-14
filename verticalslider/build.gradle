@@ -1,0 +1,53 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.8.0'
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        minSdkVersion 9
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+}
+
+// to release, update publishVersion and run the following:
+// ./gradlew :verticalslider:clean :verticalslider:build :verticalslider:bintrayUpload
+
+publish {
+    userOrg = 'bosphere'
+    groupId = 'com.github.bosphere'
+    artifactId = 'android-verticalslider'
+    uploadName = 'android-vertical-slider'
+    publishVersion = '1.0.0'
+    desc = 'A simple SeekBar-alike slider that can be scroll vertically'
+    website = 'https://github.com/bosphere/Android-VerticalSlider'
+
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    bintrayUser = properties.getProperty("bintray.user")
+    bintrayKey = properties.getProperty("bintray.apikey")
+
+    dryRun = false
+}
