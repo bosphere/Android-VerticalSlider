@@ -45,7 +45,7 @@ Customization
 | Thumb color | `vs_thumb_color` | `setThumbColor(int color)` |
 | Track thickness | `vs_track_fg_thickness` | `setTrackFgThicknessPx(int heightPx)` |
 | Track thickness (background) | `vs_track_bg_thickness` | `setTrackBgThicknessPx(int heightPx)` |
-| Track color | `vs_track_fg_color` | `setTrackColor(int color)` |
+| Track color | `vs_track_fg_color` | `setTrackFgColor(int color)` |
 | Track color (background) | `vs_track_bg_color` | `setTrackBgColor(int color)` |
 
 

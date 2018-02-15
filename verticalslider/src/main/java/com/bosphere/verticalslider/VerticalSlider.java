@@ -55,7 +55,7 @@ public class VerticalSlider extends View {
         invalidate();
     }
 
-    public void setTrackColor(int color) {
+    public void setTrackFgColor(int color) {
         mTrackFgPaint.setColor(color);
         invalidate();
     }
