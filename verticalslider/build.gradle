@@ -40,7 +40,7 @@ publish {
     groupId = 'com.github.bosphere'
     artifactId = 'android-verticalslider'
     uploadName = 'android-vertical-slider'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'A simple SeekBar-alike slider that can be scroll vertically'
     website = 'https://github.com/bosphere/Android-VerticalSlider'
 

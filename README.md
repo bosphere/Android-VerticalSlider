@@ -9,7 +9,7 @@ Usage
 -----
 ```gradle
 dependencies {
-    compile 'com.github.bosphere:android-verticalslider:1.0.0'
+    compile 'com.github.bosphere:android-verticalslider:1.0.2'
 }
 ```
 

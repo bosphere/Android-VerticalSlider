@@ -10,6 +10,7 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -93,6 +94,9 @@ public class VerticalSlider extends View {
     }
 
     private void init(AttributeSet attrs, int defStyleAttr) {
+        // to support non-touchable environment
+        setFocusable(true);
+
         int colorDefaultBg = resolveAttrColor("colorControlNormal", COLOR_BG);
         int colorDefaultFg = resolveAttrColor("colorControlActivated", COLOR_FG);
 
@@ -177,6 +181,22 @@ public class VerticalSlider extends View {
                 break;
         }
         return true;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_DPAD_UP) {
+            if (mProgress < 1f) {
+                onProgressChanged(mProgress + 0.02f, true);
+                return true;
+            }
+        } else if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN) {
+            if (mProgress > 0f) {
+                onProgressChanged(mProgress - 0.02f, true);
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     private void onProgressChanged(float progress, boolean notifyChange) {
