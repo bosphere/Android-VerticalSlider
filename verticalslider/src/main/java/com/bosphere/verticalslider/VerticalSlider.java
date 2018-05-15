@@ -157,7 +157,7 @@ public class VerticalSlider extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int height = getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec);
 
-        int contentWidth = getPaddingTop() + mThumbRadius * 2 + getPaddingBottom();
+        int contentWidth = getPaddingLeft() + mThumbRadius * 2 + getPaddingRight();
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int width = MeasureSpec.getSize(widthMeasureSpec);
         if (widthMode != MeasureSpec.EXACTLY) {
